@@ -4,6 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex" />
+    <script>
+      // SPA-fallback для GitHub Pages: чистые URL страниц проектов
+      // (/portfolio/memiqa, /portfolio/lowcode) физически не существуют,
+      // поэтому Pages отдаёт эту страницу со статусом 404. Сохраняем путь
+      // и уходим на корень сайта — index.html восстановит URL через
+      // history.replaceState (см. inline-скрипт там).
+      (function () {
+        var m = window.location.pathname.match(/^(.*\/)(memiqa|lowcode)\/?$/);
+        if (!m) return;
+        try {
+          sessionStorage.setItem('spa-redirect', m[1] + m[2] + window.location.search + window.location.hash);
+        } catch (e) {}
+        window.location.replace(m[1]);
+      })();
+    </script>
     <link rel="icon" type="image/svg+xml" href="/portfolio/favicon.svg" />
     <title>404 — страница не найдена</title>
     <style>

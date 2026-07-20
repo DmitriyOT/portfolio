@@ -18,6 +18,20 @@
         }
       })();
     </script>
+    <!-- Восстановление чистого URL после SPA-fallback из 404.html (GitHub Pages):
+         404.html сохраняет запрошенный путь в sessionStorage и редиректит на корень,
+         здесь возвращаем его в адресную строку до загрузки React. -->
+    <script>
+      (function () {
+        try {
+          var redirect = sessionStorage.getItem('spa-redirect');
+          if (redirect) {
+            sessionStorage.removeItem('spa-redirect');
+            window.history.replaceState(null, '', redirect);
+          }
+        } catch (e) {}
+      })();
+    </script>
     <meta name="description" content="Дмитрий Толстиков — продуктовый fullstack-разработчик (.NET + React) с навыками DevOps. Проекты, опыт, технологии." />
     <!-- Сайт доступен по прямой ссылке, но исключён из поисковой выдачи -->
     <meta name="robots" content="noindex, nofollow" />
@@ -70,7 +84,7 @@
         "knowsAbout": ["C#", "ASP.NET Core", "React", "Next.js", "TypeScript", "PostgreSQL", "MS SQL", "Kafka", "Docker", "CI/CD", "DevOps"]
       }
     </script>
-    <script type="module" crossorigin src="/portfolio/assets/index-DHIBobEM.js"></script>
+    <script type="module" crossorigin src="/portfolio/assets/index-CnsiUzxn.js"></script>
     <link rel="modulepreload" crossorigin href="/portfolio/assets/react-Cmfxs0k-.js">
     <link rel="modulepreload" crossorigin href="/portfolio/assets/motion-CWrbIRup.js">
     <link rel="stylesheet" crossorigin href="/portfolio/assets/index-BTCgnJGJ.css">
