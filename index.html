@@ -3,7 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Тема до первой отрисовки (без FOUC): localStorage → prefers-color-scheme → dark.
+         Логика должна совпадать с initialTheme() в src/theme-provider.tsx -->
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem('theme');
+          if (t !== 'light' && t !== 'dark') {
+            t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+          }
+          document.documentElement.dataset.theme = t;
+        } catch (e) {
+          document.documentElement.dataset.theme = 'dark';
+        }
+      })();
+    </script>
     <meta name="description" content="Дмитрий Толстиков — продуктовый fullstack-разработчик (.NET + React) с навыками DevOps. Проекты, опыт, технологии." />
+    <!-- Сайт доступен по прямой ссылке, но исключён из поисковой выдачи -->
+    <meta name="robots" content="noindex, nofollow" />
     <link rel="canonical" href="https://dmitriyot.github.io/portfolio/" />
     <link rel="alternate" hreflang="ru" href="https://dmitriyot.github.io/portfolio/" />
     <link rel="alternate" hreflang="en" href="https://dmitriyot.github.io/portfolio/?lang=en" />
@@ -53,10 +70,10 @@
         "knowsAbout": ["C#", "ASP.NET Core", "React", "Next.js", "TypeScript", "PostgreSQL", "MS SQL", "Kafka", "Docker", "CI/CD", "DevOps"]
       }
     </script>
-    <script type="module" crossorigin src="/portfolio/assets/index-DAU753hR.js"></script>
+    <script type="module" crossorigin src="/portfolio/assets/index-DHIBobEM.js"></script>
     <link rel="modulepreload" crossorigin href="/portfolio/assets/react-Cmfxs0k-.js">
     <link rel="modulepreload" crossorigin href="/portfolio/assets/motion-CWrbIRup.js">
-    <link rel="stylesheet" crossorigin href="/portfolio/assets/index-DyMiUacJ.css">
+    <link rel="stylesheet" crossorigin href="/portfolio/assets/index-BTCgnJGJ.css">
   </head>
   <body>
     <div id="root"></div>
