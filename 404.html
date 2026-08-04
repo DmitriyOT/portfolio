@@ -9,7 +9,9 @@
       // (/portfolio/memiqa, /portfolio/lowcode) физически не существуют,
       // поэтому Pages отдаёт эту страницу со статусом 404. Сохраняем путь
       // и уходим на корень сайта — index.html восстановит URL через
-      // history.replaceState (см. inline-скрипт там).
+      // history.replaceState (см. public/spa-restore.js).
+      // Слаги в regex ниже дублируют src/data/project-routes.json (источник
+      // истины) — синхронность проверяется smoke-тестом (scripts/smoke.mjs).
       (function () {
         var m = window.location.pathname.match(/^(.*\/)(memiqa|lowcode)\/?$/);
         if (!m) return;
