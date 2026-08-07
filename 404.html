@@ -6,14 +6,14 @@
     <meta name="robots" content="noindex" />
     <script>
       // SPA-fallback для GitHub Pages: чистые URL страниц проектов
-      // (/portfolio/memiqa, /portfolio/lowcode) физически не существуют,
+      // (/portfolio/memiqa, /portfolio/lowcode, /portfolio/site) физически не существуют,
       // поэтому Pages отдаёт эту страницу со статусом 404. Сохраняем путь
       // и уходим на корень сайта — index.html восстановит URL через
       // history.replaceState (см. public/spa-restore.js).
       // Слаги в regex ниже дублируют src/data/project-routes.json (источник
       // истины) — синхронность проверяется smoke-тестом (scripts/smoke.mjs).
       (function () {
-        var m = window.location.pathname.match(/^(.*\/)(memiqa|lowcode)\/?$/);
+        var m = window.location.pathname.match(/^(.*\/)(memiqa|lowcode|site)\/?$/);
         if (!m) return;
         try {
           sessionStorage.setItem('spa-redirect', m[1] + m[2] + window.location.search + window.location.hash);
