@@ -16,7 +16,8 @@
          здесь возвращаем его в адресную строку до загрузки React. -->
     <script src="spa-restore.js"></script>
     <!-- Яндекс.Метрика: внешний загрузчик (без inline из-за CSP), defer —
-         не блокирует рендер; сам счётчик активен только на продовом домене -->
+         не блокирует рендер; сам счётчик активен только на продовом домене
+         и только после явного согласия в cookie-баннере (152-ФЗ) -->
     <script src="metrika-init.js" defer></script>
     <meta name="description" content="Дмитрий Толстиков — продуктовый fullstack-разработчик (.NET + React) с навыками DevOps. Проекты, опыт, технологии." />
     <link rel="canonical" href="https://dmitriyot.github.io/portfolio/" />
@@ -68,12 +69,12 @@
         "knowsAbout": ["C#", "ASP.NET Core", "React", "Next.js", "TypeScript", "PostgreSQL", "MS SQL", "Kafka", "Docker", "CI/CD", "DevOps"]
       }
     </script>
-    <script type="module" crossorigin src="/portfolio/assets/index-CxHJyW9S.js"></script>
+    <script type="module" crossorigin src="/portfolio/assets/index-DC7fUmy3.js"></script>
     <link rel="modulepreload" crossorigin href="/portfolio/assets/react-DWYR_daP.js">
     <link rel="modulepreload" crossorigin href="/portfolio/assets/motion-BbccyF2-.js">
-    <link rel="stylesheet" crossorigin href="/portfolio/assets/index-3iyRPGAW.css">
-      <link rel="preload" as="font" type="font/woff2" crossorigin href="/portfolio/assets/inter-cyrillic-400-normal-obahsSVq.woff2" />
-    <link rel="preload" as="font" type="font/woff2" crossorigin href="/portfolio/assets/inter-latin-400-normal-C38fXH4l.woff2" />
+    <link rel="stylesheet" crossorigin href="/portfolio/assets/index-Dq08JZHr.css">
+      <link rel="preload" as="font" type="font/woff2" crossorigin href="/portfolio/assets/inter-latin-400-normal-C38fXH4l.woff2" />
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="/portfolio/assets/inter-cyrillic-400-normal-obahsSVq.woff2" />
     <link rel="preload" as="font" type="font/woff2" crossorigin href="/portfolio/assets/inter-latin-700-normal-Yt3aPRUw.woff2" />
     <link rel="preload" as="font" type="font/woff2" crossorigin href="/portfolio/assets/inter-cyrillic-700-normal-CjBOestx.woff2" />
     <link rel="preload" as="font" type="font/woff2" crossorigin href="/portfolio/assets/manrope-latin-700-normal-BZp_XxE4.woff2" />
@@ -81,7 +82,7 @@
   </head>
   <body>
     <div id="root"></div>
-    <!-- Yandex.Metrika noscript-фолбэк: для посетителей с отключённым JS -->
-    <noscript><div><img src="https://mc.yandex.ru/watch/111460043" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- Noscript-фолбэк Метрики намеренно отсутствует: без JS нельзя показать
+         баннер и получить согласие (152-ФЗ), значит, и пиксель незаконен. -->
   </body>
 </html>
